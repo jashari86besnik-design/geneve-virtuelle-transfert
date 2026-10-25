@@ -1,0 +1,95 @@
+name: Import donnees officielles Geneve
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/donnees-transfert.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: geneve-donnees-transfert
+  cancel-in-progress: false
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          lfs: false
+          sparse-checkout: |
+            donnees
+            .github/workflows
+      - name: Download, verify, commit unchanged official data
+        shell: python
+        run: |
+          import pathlib, urllib.request, urllib.parse, json, hashlib, subprocess, datetime, time, zipfile, io, csv, concurrent.futures, os
+          from zoneinfo import ZoneInfo
+          ROOT=pathlib.Path('donnees'); ROOT.mkdir(exist_ok=True)
+          assert not (ROOT/'MANIFEST.json').exists(), 'Existing data manifest: stop to avoid replacing data'
+          LIMIT=90*1024*1024
+          BASE='https://vector.sitg.ge.ch/arcgis/rest/services/SIT_AUTOR_DOSSIER/FeatureServer/0'
+          def now(): return datetime.datetime.now(ZoneInfo('Europe/Zurich')).isoformat(timespec='seconds')
+          def get(url):
+              for attempt in range(4):
+                  try:
+                      with urllib.request.urlopen(url,timeout=180) as r: return r.read(),r.geturl(),r.headers.get('Last-Modified')
+                  except Exception:
+                      if attempt==3: raise
+                      time.sleep(3*(attempt+1))
+          def query(**kw): return BASE+'/query?'+urllib.parse.urlencode(kw)
+          def sha(b): return hashlib.sha256(b).hexdigest()
+          def save(name,url,b,downloaded_at,final_url,last_modified,**extra):
+              p=ROOT/name; p.parent.mkdir(parents=True,exist_ok=True); p.write_bytes(b)
+              item={'name':name,'source_url':url,'resolved_url':final_url,'downloaded_at':downloaded_at,'http_last_modified':last_modified,'size_bytes':len(b),'sha256':sha(b),'chunks':[],**extra}
+              if len(b)>LIMIT:
+                  subprocess.run(['split','-b','90M','-d','-a','3','--numeric-suffixes=1',str(p),str(p)+'.part'],check=True)
+                  for fragment in sorted(p.parent.glob(p.name+'.part[0-9][0-9][0-9]')):
+                      bb=fragment.read_bytes(); item['chunks'].append({'path':str(fragment),'size_bytes':len(bb),'sha256':sha(bb)})
+                  assert b==b''.join(pathlib.Path(x['path']).read_bytes() for x in item['chunks']); p.unlink()
+              else: item['stored_path']=str(p)
+              return item
+          start=now(); files=[]
+          u='https://public.madd.bfs.admin.ch/ge.zip'; b,final,lm=get(u)
+          with zipfile.ZipFile(io.BytesIO(b)) as z:
+              assert z.testzip() is None
+              rows=csv.DictReader(io.TextIOWrapper(z.open('gebaeude_batiment_edificio.csv'),encoding='utf-8-sig'),delimiter='\t')
+              buildings=0
+              for row in rows:
+                  assert row['GDEKT']=='GE', 'Non-GE record in cantonal archive'; buildings+=1
+          files.append(save('ge.zip',u,b,now(),final,lm,dataset='RegBL OFS canton GE',building_count=buildings,transformation='none'))
+          meta=json.loads(get(BASE+'?f=json')[0]); fields=[f['name'] for f in meta['fields']]
+          ids_url=query(f='json',where='1=1',returnIdsOnly='true')
+          ids=json.loads(get(ids_url)[0]); expected=set(ids['objectIds']); oid=ids['objectIdFieldName']
+          count=len(expected); pages=(count+3999)//4000
+          print('RegBL buildings:',buildings,'SITG records:',count,'pages:',pages,flush=True)
+          def download_page(page):
+              url=query(f='geojson',where='1=1',outFields='*',outSR='2056',returnGeometry='true',orderByFields=oid+' ASC',resultOffset=page*4000,resultRecordCount=4000)
+              b,final,lm=get(url); at=now(); j=json.loads(b)
+              assert j.get('type')=='FeatureCollection',j.get('error')
+              assert j.get('crs',{}).get('properties',{}).get('name')=='EPSG:2056'
+              features=j['features']; assert len(features)==min(4000,count-page*4000)
+              observed=[]
+              for f in features:
+                  assert set(fields)==set(f['properties']), 'Missing or extra attributes'
+                  observed.append(f['properties'][oid])
+              item=save('SIT_AUTOR_DOSSIER/SIT_AUTOR_DOSSIER_LV95_page%03d.geojson'%(page+1),url,b,at,final,lm,dataset='SIT_AUTOR_DOSSIER',crs='EPSG:2056',page=page+1,feature_count=len(features),transformation='none; exact server GeoJSON response')
+              print('Downloaded page',page+1,flush=True)
+              return item,observed
+          seen=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+              for item,observed in pool.map(download_page,range(pages)):
+                  files.append(item);seen.extend(observed)
+          assert len(seen)==len(set(seen))==count and set(seen)==expected
+          assert set(json.loads(get(ids_url)[0])['objectIds'])==expected,'Dataset changed during download'
+          manifest={'download_started_at':start,'download_completed_at':now(),'timezone':'Europe/Zurich','max_chunk_bytes':LIMIT,'regbl_buildings':buildings,'sitg_feature_count':count,'sitg_fields':fields,'sitg_catalog_url':'https://sitg.ge.ch/donnees/sit-autor-dossier','sitg_export_note':'Server paginated GeoJSON responses, all attributes, EPSG:2056. Files preserved byte-for-byte; no merge or reserialization. Concatenate .partNNN chunks only when chunks are listed.','files':files,'total_original_bytes':sum(x['size_bytes'] for x in files)}
+          (ROOT/'MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+          def git(*args): subprocess.run(['git',*args],check=True)
+          git('config','user.name','github-actions[bot]');git('config','user.email','41898282+github-actions[bot]@users.noreply.github.com')
+          for item in files:
+              paths=[c['path'] for c in item['chunks']] or [item['stored_path']]
+              git('add','--',*paths);git('commit','-m','Add official data: '+item['name']);git('push','origin','HEAD:main')
+          git('add','donnees/MANIFEST.json');git('rm','.github/workflows/donnees-transfert.yml');git('commit','-m','Add data manifest and remove one-time download workflow');git('push','origin','HEAD:main')
+          print('COMPLETE',json.dumps({'source_files':len(files),'stored_data_files':sum(len(x['chunks']) or 1 for x in files),'bytes':manifest['total_original_bytes'],'manifest_bytes':(ROOT/'MANIFEST.json').stat().st_size,'regbl_buildings':buildings,'sitg_records':count}),flush=True)
