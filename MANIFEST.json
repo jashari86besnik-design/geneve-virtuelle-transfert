@@ -1,0 +1,224 @@
+{
+  "fragment_limit_bytes": 94371840,
+  "archives": [
+    {
+      "name": "GENEVE_00_INSTRUCTIONS.zip",
+      "size_bytes": 1627464,
+      "sha256": "725b9ee3cf441e7674cacfddd1460282511461b3748532399824dd397949ed92",
+      "parts": [
+        {
+          "path": "parts/GENEVE_00_INSTRUCTIONS.zip/GENEVE_00_INSTRUCTIONS.zip.part001",
+          "size_bytes": 1627464,
+          "sha256": "725b9ee3cf441e7674cacfddd1460282511461b3748532399824dd397949ed92"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_MODELES_01.zip",
+      "size_bytes": 75577059,
+      "sha256": "62bf4643362ee45d2a1b550e25934c055793c2d082a08516e651b3d36980d532",
+      "parts": [
+        {
+          "path": "parts/GENEVE_MODELES_01.zip/GENEVE_MODELES_01.zip.part001",
+          "size_bytes": 75577059,
+          "sha256": "62bf4643362ee45d2a1b550e25934c055793c2d082a08516e651b3d36980d532"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_MODELES_02.zip",
+      "size_bytes": 73502322,
+      "sha256": "eb6741d3d32e54c6153287ac9f9b66420634eac8bcfa7b0af1b12724b193805a",
+      "parts": [
+        {
+          "path": "parts/GENEVE_MODELES_02.zip/GENEVE_MODELES_02.zip.part001",
+          "size_bytes": 73502322,
+          "sha256": "eb6741d3d32e54c6153287ac9f9b66420634eac8bcfa7b0af1b12724b193805a"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_MODELES_03.zip",
+      "size_bytes": 63511170,
+      "sha256": "3a8c9d770c1a44811329ec5f0d115bd27ee6549084202415c51c748d8c026968",
+      "parts": [
+        {
+          "path": "parts/GENEVE_MODELES_03.zip/GENEVE_MODELES_03.zip.part001",
+          "size_bytes": 63511170,
+          "sha256": "3a8c9d770c1a44811329ec5f0d115bd27ee6549084202415c51c748d8c026968"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_MODELES_04.zip",
+      "size_bytes": 77617387,
+      "sha256": "28e8e5f814cbd4cb611eddc7dbd5ca0b5c328a8b6ff2df2a933b62a4b5464caf",
+      "parts": [
+        {
+          "path": "parts/GENEVE_MODELES_04.zip/GENEVE_MODELES_04.zip.part001",
+          "size_bytes": 77617387,
+          "sha256": "28e8e5f814cbd4cb611eddc7dbd5ca0b5c328a8b6ff2df2a933b62a4b5464caf"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_MODELES_05.zip",
+      "size_bytes": 71490485,
+      "sha256": "a0b8d710e3de895e2923fe199e0e31cc77756ac22f6b61ed2f949cada2e6d8b1",
+      "parts": [
+        {
+          "path": "parts/GENEVE_MODELES_05.zip/GENEVE_MODELES_05.zip.part001",
+          "size_bytes": 71490485,
+          "sha256": "a0b8d710e3de895e2923fe199e0e31cc77756ac22f6b61ed2f949cada2e6d8b1"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_01.zip",
+      "size_bytes": 79239903,
+      "sha256": "9b31b829640058342824e251b068f3fba0763879cc33aa3063179e2906cca5c5",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_01.zip/GENEVE_STUDIO_01.zip.part001",
+          "size_bytes": 79239903,
+          "sha256": "9b31b829640058342824e251b068f3fba0763879cc33aa3063179e2906cca5c5"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_02.zip",
+      "size_bytes": 78905387,
+      "sha256": "099914bb7f0f9d6b0ca3c68baefc135b6d156c1ce3fd3f81bbbc995c754b7e91",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_02.zip/GENEVE_STUDIO_02.zip.part001",
+          "size_bytes": 78905387,
+          "sha256": "099914bb7f0f9d6b0ca3c68baefc135b6d156c1ce3fd3f81bbbc995c754b7e91"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_03.zip",
+      "size_bytes": 79392680,
+      "sha256": "2b9a3648646872a946937a2352cd6c00252e06ef07a12c26d149eedf1c3f7f82",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_03.zip/GENEVE_STUDIO_03.zip.part001",
+          "size_bytes": 79392680,
+          "sha256": "2b9a3648646872a946937a2352cd6c00252e06ef07a12c26d149eedf1c3f7f82"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_04.zip",
+      "size_bytes": 77026614,
+      "sha256": "dd0b944c02ab135242ae4a94a991b1efaf5498d918396f45c411376615a141f6",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_04.zip/GENEVE_STUDIO_04.zip.part001",
+          "size_bytes": 77026614,
+          "sha256": "dd0b944c02ab135242ae4a94a991b1efaf5498d918396f45c411376615a141f6"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_05.zip",
+      "size_bytes": 79482187,
+      "sha256": "95ab9495ee9071d32c6060c34c71af0a705568f7a705f27bb46a0888d8b3d58b",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_05.zip/GENEVE_STUDIO_05.zip.part001",
+          "size_bytes": 79482187,
+          "sha256": "95ab9495ee9071d32c6060c34c71af0a705568f7a705f27bb46a0888d8b3d58b"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_06.zip",
+      "size_bytes": 78338976,
+      "sha256": "a1d4a81efc9b88ea96ba7dfec641ef01ba4f977b7594c0a63607588f44daae9d",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_06.zip/GENEVE_STUDIO_06.zip.part001",
+          "size_bytes": 78338976,
+          "sha256": "a1d4a81efc9b88ea96ba7dfec641ef01ba4f977b7594c0a63607588f44daae9d"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_07.zip",
+      "size_bytes": 78931675,
+      "sha256": "2c5314d13e4a98a5d31b755c9c9e25ad50e5c0684e72137a04332e0fa4d758d3",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_07.zip/GENEVE_STUDIO_07.zip.part001",
+          "size_bytes": 78931675,
+          "sha256": "2c5314d13e4a98a5d31b755c9c9e25ad50e5c0684e72137a04332e0fa4d758d3"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_08.zip",
+      "size_bytes": 78997155,
+      "sha256": "77be04c0739aa409d4b1b2e9799606a5f8f8b372333964065c7e45ccbb127246",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_08.zip/GENEVE_STUDIO_08.zip.part001",
+          "size_bytes": 78997155,
+          "sha256": "77be04c0739aa409d4b1b2e9799606a5f8f8b372333964065c7e45ccbb127246"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_09.zip",
+      "size_bytes": 73096623,
+      "sha256": "d3ee447d6ed34a6ea0f1f852b71155154e43579a88614c3522470c78cb75588e",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_09.zip/GENEVE_STUDIO_09.zip.part001",
+          "size_bytes": 73096623,
+          "sha256": "d3ee447d6ed34a6ea0f1f852b71155154e43579a88614c3522470c78cb75588e"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_10.zip",
+      "size_bytes": 78341612,
+      "sha256": "a569ac93b4d4c4d4e464d687c1b81cbbb1adec96503f22c398de2aae5af46f96",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_10.zip/GENEVE_STUDIO_10.zip.part001",
+          "size_bytes": 78341612,
+          "sha256": "a569ac93b4d4c4d4e464d687c1b81cbbb1adec96503f22c398de2aae5af46f96"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_11.zip",
+      "size_bytes": 77606553,
+      "sha256": "c4c50bd4a0786aa8dec9d2e1ab5c26264cde7a85d8d2969bfd5032399d33cf74",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_11.zip/GENEVE_STUDIO_11.zip.part001",
+          "size_bytes": 77606553,
+          "sha256": "c4c50bd4a0786aa8dec9d2e1ab5c26264cde7a85d8d2969bfd5032399d33cf74"
+        }
+      ]
+    },
+    {
+      "name": "GENEVE_STUDIO_12.zip",
+      "size_bytes": 41163142,
+      "sha256": "88f965d8c9c2d9a25cfc42ca363e50035d416f7b262f9365cae688d5a3268799",
+      "parts": [
+        {
+          "path": "parts/GENEVE_STUDIO_12.zip/GENEVE_STUDIO_12.zip.part001",
+          "size_bytes": 41163142,
+          "sha256": "88f965d8c9c2d9a25cfc42ca363e50035d416f7b262f9365cae688d5a3268799"
+        }
+      ]
+    }
+  ],
+  "total_archives": 18,
+  "total_fragments": 18,
+  "total_fragment_bytes": 1263848394
+}

@@ -1,0 +1,126 @@
+{
+  "project": "Geneve Virtuelle Studio",
+  "description": "Export du depot courant (public identique a V37) et 27 projets natifs Blender/GLB.",
+  "source_commit": "314da451fa57505d462f3420550ec5a49f795bb1",
+  "published_version": 37,
+  "file_count": 18,
+  "total_bytes": 1263848394,
+  "instructions": [
+    "Telecharger les 18 URLs ci-dessous sans authentification.",
+    "Verifier taille et SHA256 de chaque fichier.",
+    "Extraire les 12 ZIP STUDIO dans le meme dossier pour recomposer studio/.",
+    "Extraire les 5 ZIP MODELES dans le meme dossier pour recomposer native/.",
+    "Lire GENEVE_00_INSTRUCTIONS.zip. Les natifs se recoupent : ne pas fusionner automatiquement.",
+    "Aucune geometrie regeneree. Le registre comporte 35 reconstructions provisoires."
+  ],
+  "files": [
+    {
+      "filename": "GENEVE_00_INSTRUCTIONS.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/bb6af33a-e48e-4472-ab2c-5b90128a59a2.zip",
+      "size_bytes": 1627464,
+      "sha256": "725b9ee3cf441e7674cacfddd1460282511461b3748532399824dd397949ed92"
+    },
+    {
+      "filename": "GENEVE_MODELES_01.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/7f309bdb-eb11-4903-9bb5-d783c3a44451.zip",
+      "size_bytes": 75577059,
+      "sha256": "62bf4643362ee45d2a1b550e25934c055793c2d082a08516e651b3d36980d532"
+    },
+    {
+      "filename": "GENEVE_MODELES_02.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/a9b8a3d4-c0eb-4d49-8589-f6111e321df8.zip",
+      "size_bytes": 73502322,
+      "sha256": "eb6741d3d32e54c6153287ac9f9b66420634eac8bcfa7b0af1b12724b193805a"
+    },
+    {
+      "filename": "GENEVE_MODELES_03.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/ab00175b-d7b7-4392-8d7f-aff6364bf9dc.zip",
+      "size_bytes": 63511170,
+      "sha256": "3a8c9d770c1a44811329ec5f0d115bd27ee6549084202415c51c748d8c026968"
+    },
+    {
+      "filename": "GENEVE_MODELES_04.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/f0e438f7-bfef-47a9-a23f-0f5adcb17b0a.zip",
+      "size_bytes": 77617387,
+      "sha256": "28e8e5f814cbd4cb611eddc7dbd5ca0b5c328a8b6ff2df2a933b62a4b5464caf"
+    },
+    {
+      "filename": "GENEVE_MODELES_05.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/1279d8ae-fee8-4240-9dc7-a5b0f068ef0a.zip",
+      "size_bytes": 71490485,
+      "sha256": "a0b8d710e3de895e2923fe199e0e31cc77756ac22f6b61ed2f949cada2e6d8b1"
+    },
+    {
+      "filename": "GENEVE_STUDIO_01.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/ed9a0ef9-764b-42c0-a8a8-f120e5e5f003.zip",
+      "size_bytes": 79239903,
+      "sha256": "9b31b829640058342824e251b068f3fba0763879cc33aa3063179e2906cca5c5"
+    },
+    {
+      "filename": "GENEVE_STUDIO_02.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/57ea9b26-0614-4ad1-aeb8-0945ad0066e5.zip",
+      "size_bytes": 78905387,
+      "sha256": "099914bb7f0f9d6b0ca3c68baefc135b6d156c1ce3fd3f81bbbc995c754b7e91"
+    },
+    {
+      "filename": "GENEVE_STUDIO_03.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/3c916cad-b320-4b07-b7ac-1adf3be224f7.zip",
+      "size_bytes": 79392680,
+      "sha256": "2b9a3648646872a946937a2352cd6c00252e06ef07a12c26d149eedf1c3f7f82"
+    },
+    {
+      "filename": "GENEVE_STUDIO_04.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/5178073e-ca29-48f2-8006-21a909452b63.zip",
+      "size_bytes": 77026614,
+      "sha256": "dd0b944c02ab135242ae4a94a991b1efaf5498d918396f45c411376615a141f6"
+    },
+    {
+      "filename": "GENEVE_STUDIO_05.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/318b3cbd-a3dc-46dc-a39f-aed79d52f042.zip",
+      "size_bytes": 79482187,
+      "sha256": "95ab9495ee9071d32c6060c34c71af0a705568f7a705f27bb46a0888d8b3d58b"
+    },
+    {
+      "filename": "GENEVE_STUDIO_06.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/308fd47b-6413-45f0-a198-6d95db5a47e0.zip",
+      "size_bytes": 78338976,
+      "sha256": "a1d4a81efc9b88ea96ba7dfec641ef01ba4f977b7594c0a63607588f44daae9d"
+    },
+    {
+      "filename": "GENEVE_STUDIO_07.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/6e28432a-3cd0-40b2-a190-d7073cc1436f.zip",
+      "size_bytes": 78931675,
+      "sha256": "2c5314d13e4a98a5d31b755c9c9e25ad50e5c0684e72137a04332e0fa4d758d3"
+    },
+    {
+      "filename": "GENEVE_STUDIO_08.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/ffaffc31-31a5-4156-a1b3-ade78e40d70c.zip",
+      "size_bytes": 78997155,
+      "sha256": "77be04c0739aa409d4b1b2e9799606a5f8f8b372333964065c7e45ccbb127246"
+    },
+    {
+      "filename": "GENEVE_STUDIO_09.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/671eca0a-5ba7-45c2-bd5c-fff49cde87d9.zip",
+      "size_bytes": 73096623,
+      "sha256": "d3ee447d6ed34a6ea0f1f852b71155154e43579a88614c3522470c78cb75588e"
+    },
+    {
+      "filename": "GENEVE_STUDIO_10.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/9072e7c8-0a95-4732-8f9b-058867f56406.zip",
+      "size_bytes": 78341612,
+      "sha256": "a569ac93b4d4c4d4e464d687c1b81cbbb1adec96503f22c398de2aae5af46f96"
+    },
+    {
+      "filename": "GENEVE_STUDIO_11.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/fdabbab6-6dc1-46f4-9e8d-d024d02d002d.zip",
+      "size_bytes": 77606553,
+      "sha256": "c4c50bd4a0786aa8dec9d2e1ab5c26264cde7a85d8d2969bfd5032399d33cf74"
+    },
+    {
+      "filename": "GENEVE_STUDIO_12.zip",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3A2M5WRZqCyhHHfgoJOgRemaURE/320f5b39-8f75-4e99-8322-1329ff5a86ff.zip",
+      "size_bytes": 41163142,
+      "sha256": "88f965d8c9c2d9a25cfc42ca363e50035d416f7b262f9365cae688d5a3268799"
+    }
+  ]
+}
